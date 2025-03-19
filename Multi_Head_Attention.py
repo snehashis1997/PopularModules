@@ -30,6 +30,7 @@ class MultiHeadAttention(nn.Module):
         return self.W_O(output), attention_weights.mean(dim=1)
 
 # Multi-Head Attention Example
+x = torch.rand(1, 4, 8)
 multi_head_attention = MultiHeadAttention(embed_size=8, num_heads=2)
 output, attn_weights = multi_head_attention(x)
 
